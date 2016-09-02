@@ -17,6 +17,11 @@ func Float64(value float64) *Float64Number {
 	return &Float64Number{value: value}
 }
 
+// Float64 returns itself
+func (n *Float64Number) Float64() (*Float64Number, error) {
+	return n, nil
+}
+
 // Int64 returns the equivalent Int64Number object
 func (n *Float64Number) Int64() (*Int64Number, error) {
 	if n.value >= math.MaxInt64 {
