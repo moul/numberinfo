@@ -6,6 +6,13 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+func TestInt64Number(t *testing.T) {
+	Convey("Testing Int64Number", t, func() {
+		_, ok := interface{}(Int64(4242)).(Number)
+		So(ok, ShouldBeTrue)
+	})
+}
+
 func TestInt64(t *testing.T) {
 	Convey("Testing Int64()", t, func() {
 		So(Int64(4242).value, ShouldEqual, 4242)

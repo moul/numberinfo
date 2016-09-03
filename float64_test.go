@@ -6,6 +6,13 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+func TestFloat64Number(t *testing.T) {
+	Convey("Testing Float64Number", t, func() {
+		_, ok := interface{}(Float64(4242)).(Number)
+		So(ok, ShouldBeTrue)
+	})
+}
+
 func TestFloat64(t *testing.T) {
 	Convey("Testing Float64()", t, func() {
 		So(Float64(4242.0).value, ShouldEqual, 4242)
