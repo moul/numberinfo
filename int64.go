@@ -12,13 +12,13 @@ func Int64(value int64) *Int64Number {
 	return &Int64Number{value: value}
 }
 
-// Float64 returns the equivalent Int64Number object
-func (n *Int64Number) Float64() (*Float64Number, error) {
+// Float64Number returns the equivalent Int64Number object
+func (n *Int64Number) Float64Number() (*Float64Number, error) {
 	return Float64(float64(n.value)), nil
 }
 
-// Int64 returns itself
-func (n *Int64Number) Int64() (*Int64Number, error) {
+// Int64Number returns itself
+func (n *Int64Number) Int64Number() (*Int64Number, error) {
 	return n, nil
 }
 

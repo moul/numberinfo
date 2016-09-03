@@ -17,13 +17,13 @@ func Float64(value float64) *Float64Number {
 	return &Float64Number{value: value}
 }
 
-// Float64 returns itself
-func (n *Float64Number) Float64() (*Float64Number, error) {
+// Float64Number returns itself
+func (n *Float64Number) Float64Number() (*Float64Number, error) {
 	return n, nil
 }
 
-// Int64 returns the equivalent Int64Number object
-func (n *Float64Number) Int64() (*Int64Number, error) {
+// Int64Number returns the equivalent Int64Number object
+func (n *Float64Number) Int64Number() (*Int64Number, error) {
 	if n.value >= math.MaxInt64 {
 		return nil, fmt.Errorf("int64 overflow")
 	}
@@ -36,7 +36,7 @@ func (n *Float64Number) Int64() (*Int64Number, error) {
 
 // BigFactorial returns the factorial value as a *big.Float
 func (n *Float64Number) BigFactorial() (*big.Int, error) {
-	int64, err := n.Int64()
+	int64, err := n.Int64Number()
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (n *Float64Number) BigFactorial() (*big.Int, error) {
 
 // IsPrime returns the true if the number is a prime
 func (n *Float64Number) IsPrime() bool {
-	int64, err := n.Int64()
+	int64, err := n.Int64Number()
 	if err != nil {
 		return false
 	}

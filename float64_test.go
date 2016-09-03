@@ -21,12 +21,12 @@ func TestFloat64(t *testing.T) {
 }
 
 func TestFloat64Number_Float64(t *testing.T) {
-	Convey("Testing Float64Number.Float64()", t, func() {
-		val, err := Float64(4242.0).Float64()
+	Convey("Testing Float64Number.Float64Number()", t, func() {
+		val, err := Float64(4242.0).Float64Number()
 		So(err, ShouldBeNil)
 		So(val.value, ShouldEqual, 4242.0)
 
-		val, err = Float64(-4242.0).Float64()
+		val, err = Float64(-4242.0).Float64Number()
 		So(err, ShouldBeNil)
 		So(val.value, ShouldEqual, -4242.0)
 	})
@@ -34,11 +34,11 @@ func TestFloat64Number_Float64(t *testing.T) {
 
 func TestFloat64Number_Int64(t *testing.T) {
 	Convey("Testing Float64Number.Int64()", t, func() {
-		val, err := Float64(4242.0).Int64()
+		val, err := Float64(4242.0).Int64Number()
 		So(err, ShouldBeNil)
 		So(val.value, ShouldEqual, 4242)
 
-		val, err = Float64(-4242.0).Int64()
+		val, err = Float64(-4242.0).Int64Number()
 		So(err, ShouldBeNil)
 		So(val.value, ShouldEqual, -4242)
 	})
