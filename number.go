@@ -8,4 +8,5 @@ type Number interface {
 	Float64() (*Float64Number, error)
 
 	BigFactorial() (*big.Int, error)
+	IsPrime() bool
 }

@@ -28,3 +28,17 @@ func (n *Int64Number) BigFactorial() (*big.Int, error) {
 	x.MulRange(1, n.value)
 	return x, nil
 }
+
+// IsPrime returns true if the number is prime
+func (n *Int64Number) IsPrime() bool {
+	if n.value < 2 {
+		return false
+	}
+
+	for i := int64(2); i < n.value; i++ {
+		if n.value%i == 0 {
+			return false
+		}
+	}
+	return true
+}

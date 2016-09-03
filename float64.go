@@ -42,3 +42,12 @@ func (n *Float64Number) BigFactorial() (*big.Int, error) {
 	}
 	return int64.BigFactorial()
 }
+
+// IsPrime returns the true if the number is a prime
+func (n *Float64Number) IsPrime() bool {
+	int64, err := n.Int64()
+	if err != nil {
+		return false
+	}
+	return int64.IsPrime()
+}
