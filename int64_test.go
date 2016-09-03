@@ -42,5 +42,9 @@ func TestInt64Number_BigFactorial(t *testing.T) {
 		val, err := Int64(5).BigFactorial()
 		So(err, ShouldBeNil)
 		So(val.Uint64(), ShouldEqual, 120)
+
+		val, err = Int64(-5).BigFactorial()
+		So(err, ShouldBeNil)
+		So(val.Uint64(), ShouldEqual, 1)
 	})
 }
