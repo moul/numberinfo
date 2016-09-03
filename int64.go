@@ -1,6 +1,9 @@
 package numberinfo
 
-import "math/big"
+import (
+	"fmt"
+	"math/big"
+)
 
 // Int64Number implements the Number interface for base type int64
 type Int64Number struct {
@@ -41,4 +44,9 @@ func (n *Int64Number) IsPrime() bool {
 		}
 	}
 	return true
+}
+
+// String returns the representation of the number as a string
+func (n *Int64Number) String() string {
+	return fmt.Sprintf("%d", n.value)
 }

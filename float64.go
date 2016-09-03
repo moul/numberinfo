@@ -51,3 +51,8 @@ func (n *Float64Number) IsPrime() bool {
 	}
 	return int64.IsPrime()
 }
+
+// String returns the representation of the number as a string
+func (n *Float64Number) String() string {
+	return fmt.Sprintf("%f", n.value)
+}
