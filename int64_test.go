@@ -25,6 +25,18 @@ func TestInt64Number_Float64(t *testing.T) {
 	})
 }
 
+func TestInt64Number_Int64(t *testing.T) {
+	Convey("Testing Int64Number.Int64()", t, func() {
+		val, err := Int64(4242).Int64()
+		So(err, ShouldBeNil)
+		So(val.value, ShouldEqual, 4242)
+
+		val, err = Int64(-4242).Int64()
+		So(err, ShouldBeNil)
+		So(val.value, ShouldEqual, -4242)
+	})
+}
+
 func TestInt64Number_BigFactorial(t *testing.T) {
 	Convey("Testing Int64Number.BigFactorial()", t, func() {
 		val, err := Int64(5).BigFactorial()
