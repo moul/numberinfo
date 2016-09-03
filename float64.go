@@ -56,3 +56,8 @@ func (n *Float64Number) IsPrime() bool {
 func (n *Float64Number) String() string {
 	return fmt.Sprintf("%f", n.value)
 }
+
+// Sqrt returns the square root value
+func (n *Float64Number) Sqrt() float64 {
+	return math.Sqrt(n.value)
+}

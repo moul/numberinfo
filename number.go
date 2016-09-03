@@ -10,4 +10,5 @@ type Number interface {
 	BigFactorial() (*big.Int, error)
 	IsPrime() bool
 	String() string
+	Sqrt() float64
 }
